@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Footer Page</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+</head>
+<body>
+<div class="footer" th:fragment="footerfrag">
+	<div class="top">
+		<div class="column">
+			<table class="t1">
+				<tr>
+					<th>Liên hệ</th>
+					<th>Mã giảm giá</th>
+					<th>Khóa học</th>
+				</tr>
+				<tr>
+					<td><a th:href="@{'/post/' + '139'}" href="post.html"
+					target="_top">Giới thiệu</a></td>
+					<td><a th:href="@{'/post/' + '71'}" href="post.html"
+					target="_top">TinoHost</a></td>
+					<td class="color"><a th:href="@{'/post/' + '149'}" href="post.html"
+					target="_top">Javascript</a></td>
+				</tr>
+				<tr>
+					<td><a th:href="@{'/post/' + '140'}" href="post.html"
+					target="_top">Chính sách</a></td>
+					<td><a th:href="@{'/post/' + '72'}" href="post.html"
+					target="_top">Azdigi</a></td>
+					<td class="color"><a th:href="@{'/post/' + '56'}" href="post.html"
+					target="_top">Front-end</a></td>
+				</tr>
+				<tr>
+					<td><a th:href="@{'/post/' + '141'}" href="post.html"
+					target="_top">Điều khoản</a></td>
+					<td><a th:href="@{'/post/' + '73'}" href="post.html"
+					target="_top">Vultr</a></td>
+					<td class="color"><a th:href="@{'/post/' + '54'}" href="post.html"
+					target="_top">NodeJS</a></td>
+				</tr>
+				<tr>
+					<td><a th:href="@{'/post/' + '151'}" href="post.html"
+					target="_top">Liên hệ</a></td>
+					<td><a th:href="@{'/post/' + '137'}" href="post.html"
+					target="_top">Hawkhost</a></td>
+					<td class="color"><a th:href="@{'/post/' + '150'}" href="post.html"
+					target="_top">ReactJS</a></td>
+				</tr>
+				<tr>
+					<td><a th:href="@{'/post/' + '142'}" href="post.html"
+					target="_top">Guest Post</a></td>
+					<td><a th:href="@{'/post/' + '138'}" href="post.html"
+					target="_top">Stable host</a></td>
+					<td class="color"><a th:href="@{'/post/' + '55'}" href="post.html"
+					target="_top">Fullstack</a></td>
+				</tr>
+			</table>
+		</div>
+		<div class="column">
+			<table class="t2">
+				<tr>
+					<th>Giới thiệu</th>
+				</tr>
+				<tr>
+					<td>Admin <span class = "Cuong">Cường</span>, quản lý chính của website.</td>
+				</tr>
+				<tr>
+					<td>Email: thehalfheart@gmail.com</td>
+				</tr>
+				<tr>
+					<td>Phone/Zalo: 0979306603</td>
+				</tr>
+				<tr>
+					<td>Skype: thehalfheart</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div class="bot">
+	<p>@2020 - Freetuts.net. All Right Reserved</p>
+	<p>Theme <b>GoodNews</b>, nền tảng <b>Codeigniter</b>, VPS mua tại <a href="https://tinohost.com/" target="_blank">Tinohost</a></p>
+	<a href="https://www.dmca.com/Protection/Status.aspx?ID=4495f67a-93e3-4127-a6fe-eb89933037aa&refurl=https://freetuts.net/" target="_blank"><p><button style="background-color: #009900;"><b>DMCA</b></button ><button style="background-color: #6f705b;"><b>PROTECTED</b></button></p></a>
+	</div>
+	</div>
+</body>
+</html>

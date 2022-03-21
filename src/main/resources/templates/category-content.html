@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post Page</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" th:href="@{/css/style.css}"
+	href="../static/css/style.css">
+<script type="text/javascript" src="../static/js/custom-text-editor.js"></script>
+</head>
+<body id="index_body">
+
+	<div class="header_container" th:replace="~{/header :: headerfrag}"></div>
+
+	<div class="content_category" th:utext="${DetailContentPage.content}">
+
+	</div>
+	<div class="tag-list">
+		<div class="tag-container" th:each="tag : ${TagList}">
+		<div class="tag_img">
+				<a  href="/403" th:href="@{'/post/tag/' + ${tag.tagId}}"
+					target="_top"><img th:src="${tag.imageUrl}"
+					src="../static/images/title1.jpg" alt="X"></a>
+			</div>
+			<div class="tag_name">
+				<a  href="/403" th:href="@{'/post/tag/' + ${tag.tagId}}"
+					target="_top" th:text="${tag.tagName}">Post Title</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="post-list">
+		<div class="post-list-post" th:each="post : ${GetPostByCategoryDetailID}">
+			<div class="post_img_category">
+				<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+					target="_top"><img th:src="${post.postImageUrl}"
+					src="../static/images/title1.jpg" alt="X"></a>
+			</div>
+			<div class="post_title_category">
+				<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+					target="_top"><b><p th:text="${post.postTitle}">Post Title</p></b></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="coupon">
+		<table class="coupon_table">
+			<tr>
+				<th colspan="3">MÃ GIẢM GIÁ</th>
+			</tr>
+			<tr>
+				<td>Unica</td>
+				<td>50%</td>
+				<td><button onclick="couponFunction()">Lấy Mã</button></td>
+			</tr>
+			<tr>
+				<td>TinoHost</td>
+				<td>30%</td>
+				<td><button onclick="couponFunction()">Lấy Mã</button></td>
+			</tr>
+			<tr>
+				<td>INET</td>
+				<td>30%</td>
+				<td><button onclick="couponFunction()">Lấy Mã</button></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="footer" th:replace="~{/footer :: footerfrag}"></div>
+
+	<script>
+		function couponFunction() {
+			var click = prompt(
+					"Copy mã giảm giá, nhớ đọc kỹ hướng dẫn sử dụng nhé bạn.",
+					"FreetutCoupon");
+			if (click != null) {
+				window.open('https://unica.vn/?aff=2560&src=ft.sidebar.coupon',
+						'_blank');
+			}
+		}
+	</script>
+</body>
+</html>

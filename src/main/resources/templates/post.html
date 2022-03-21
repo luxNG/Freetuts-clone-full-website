@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post Page</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+<script type="text/javascript" src="../static/js/custom-text-editor.js"></script>
+
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+<body id="index_body">
+
+<div class="header_container" th:replace="~{/header :: headerfrag}"></div>
+
+<div class="content_post" th:utext="${PostPost.content}">
+	
+</div>
+
+<div class="comment">
+<span><b>ĐĂNG BÌNH LUẬN: </b></span><span>thông tin của bạn sẽ được giữ bí mật.</span></br>
+<span><b>Lưu ý: </b></span><span>Sử dụng <span class="code">{Code}</span> để đăng code, và bình luận của bạn sẽ được kiểm duyệt cẩn thận.</span></br>
+</br>
+<div id="container" >
+    <fieldset>
+    	<button class="fontStyle bold" onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text"></button>
+      	<button class="fontStyle italic" onclick="document.execCommand('italic',false,null);" title="Italicize Highlighted Text"></button>
+      	<button class="fontStyle orderedlist" onclick="document.execCommand('insertOrderedList', false, null);"><insertOrderedList></insertOrderedList></button>
+      	<button class="fontStyle unorderedlist" onclick="document.execCommand('insertUnorderedList',false, null)"><insertUnorderedList></insertUnorderedList></button>      
+  </fieldset>
+  <div id="editor1" contenteditable="true" data-text=""></div>
+</div>
+</br>
+<input type="text" id="iname" name="iname" placeholder="Name (required)">
+<input type="text" id="iemail" name="imail" placeholder="Email (required)">
+<input type="text" id="icapcha" name="icapcha" placeholder="Capcha"></br>
+</br>
+<button style="margin-left: 200px;">Đăng bình luận</button>
+</div>
+
+<div class="coupon">
+	<table class="coupon_table">
+	<tr>
+		<th colspan="3">MÃ GIẢM GIÁ</th>
+	</tr>
+	<tr>
+		<td>Unica</td>
+		<td>50%</td>
+		<td><button onclick="couponFunction()">Lấy Mã</button></td>
+	</tr>
+	<tr>
+		<td>TinoHost</td>
+		<td>30%</td>
+		<td><button onclick="couponFunction()">Lấy Mã</button></td>
+	</tr>
+	<tr>
+		<td>INET</td>
+		<td>30%</td>
+		<td><button onclick="couponFunction()">Lấy Mã</button></td>
+	</tr>
+	</table>
+</div>
+
+<div class="footer" th:replace="~{/footer :: footerfrag}"></div>
+
+<script>
+function couponFunction() {
+  var click = prompt("Copy mã giảm giá, nhớ đọc kỹ hướng dẫn sử dụng nhé bạn.", "FreetutCoupon");
+  if (click != null) {
+    window.open('https://unica.vn/?aff=2560&src=ft.sidebar.coupon', '_blank');
+  }
+}
+</script>
+</body>
+</html>

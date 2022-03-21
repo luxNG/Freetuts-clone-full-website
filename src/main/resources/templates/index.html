@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>main</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" th:href="@{/css/style.css}"
+	href="../static/css/style.css">
+<script type="text/javascript" src="../static/js/custom-text-editor.js"></script>
+</head>
+<body id="index_body">
+
+	<div class="header_container" th:replace="~{/header :: headerfrag}"></div>
+
+	<div class="content">
+
+		<div class="grid-container">
+			<div class="item1"><b>LẬP TRÌNH</b></div>
+			<div class="item2" th:each="post,stat : ${Program}" th:if="${stat.count} == 1">
+				<div class="post_img">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+			</div>
+			<div class="item3">
+			<div class="post" th:each="post,stat : ${Program}" th:if="${stat.count &gt; 1 and stat.count &lt; 6}">
+				<div class="post_img">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="grid-container">
+			<div class="item1"><b>WEB MIỄN PHÍ</b></div>
+			<div class="item2" th:each="post,stat : ${FreeWebsite}" th:if="${stat.count} == 1">
+				<div class="post_img">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+			</div>
+			<div class="item3">
+			<div class="post" th:each="post,stat : ${FreeWebsite}" th:if="${stat.count &gt; 1 and stat.count &lt; 6}">
+				<div class="post_img">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="grid-container">
+			<div class="item1"><b>QUẢN TRỊ WEB</b></div>
+			<div class="item2" th:each="post,stat : ${ManageWebsite}" th:if="${stat.count} == 1">
+				<div class="post_img">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+			</div>
+			<div class="item3">
+			<div class="post" th:each="post,stat : ${ManageWebsite}" th:if="${stat.count &gt; 1 and stat.count &lt; 6}">
+				<div class="post_img">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="grid-container">
+			<div class="item1"><b>TIN HỌC</b></div>
+			<div class="item2" th:each="post,stat : ${TinHoc}" th:if="${stat.count} == 1">
+				<div class="post_img">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+			</div>
+			<div class="item3">
+			<div class="post" th:each="post,stat : ${TinHoc}" th:if="${stat.count &gt; 1 and stat.count &lt; 6}">
+				<div class="post_img">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="grid-container">
+			<div class="item1"><b>THỦ THUẬT</b></div>
+			<div class="item2" th:each="post,stat : ${Tips}" th:if="${stat.count} == 1">
+				<div class="post_img" style="padding-left: 20px !important;">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+			</div>
+			<div class="item3">
+			<div class="post" th:each="post,stat : ${Tips}" th:if="${stat.count &gt; 1 and stat.count &lt; 6}">
+				<div class="post_img">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="grid-container">
+			<div class="item1"><b>DOWNLOAD</b></div>
+			<div class="item2" th:each="post,stat : ${Download}" th:if="${stat.count} == 1">
+				<div class="post_img">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+			</div>
+			<div class="item3">
+			<div class="post" th:each="post,stat : ${Download}" th:if="${stat.count &gt; 1 and stat.count &lt; 6}">
+				<div class="post_img">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="grid-container">
+			<div class="item1"><b>MARKETING</b></div>
+			<div class="item2" th:each="post,stat : ${Marketing}" th:if="${stat.count} == 1">
+				<div class="post_img" style="padding-left: 20px !important;">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+			</div>
+			<div class="item3">
+			<div class="post" th:each="post,stat : ${Marketing}" th:if="${stat.count &gt; 1 and stat.count &lt; 6}">
+				<div class="post_img">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="grid-container">
+			<div class="item1"><b>MÔN HỌC</b></div>
+			<div class="item2" th:each="post,stat : ${Subject}" th:if="${stat.count} == 1">
+				<div class="post_img" style="padding-left: 20px !important;">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+			</div>
+			<div class="item3">
+			<div class="post" th:each="post,stat : ${Subject}" th:if="${stat.count &gt; 1 and stat.count &lt; 6}">
+				<div class="post_img">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><img th:src="${post.titleImg}"
+						src="../static/images/title1.jpg" alt="X"></a>
+				</div>
+				<div class="post_title">
+					<a th:href="@{'/post/' + ${post.postId}}" href="post.html"
+						target="_top"><p th:text="${post.title}">Post Title</p></a>
+				</div>
+				</div>
+			</div>
+		</div>	
+			
+	</div>
+
+	<div class="coupon">
+		<table class="coupon_table">
+			<tr>
+				<th colspan="3">MÃ GIẢM GIÁ</th>
+			</tr>
+			<tr>
+				<td>Unica</td>
+				<td>50%</td>
+				<td><button onclick="couponFunction()">Lấy Mã</button></td>
+			</tr>
+			<tr>
+				<td>TinoHost</td>
+				<td>30%</td>
+				<td><button onclick="couponFunction()">Lấy Mã</button></td>
+			</tr>
+			<tr>
+				<td>INET</td>
+				<td>30%</td>
+				<td><button onclick="couponFunction()">Lấy Mã</button></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="footer" th:replace="~{/footer :: footerfrag}"></div>
+
+	<script>
+		function couponFunction() {
+			var click = prompt(
+					"Copy mã giảm giá, nhớ đọc kỹ hướng dẫn sử dụng nhé bạn.",
+					"FreetutCoupon");
+			if (click != null) {
+				window.open('https://unica.vn/?aff=2560&src=ft.sidebar.coupon',
+						'_blank');
+			}
+		}
+	</script>
+</body>
+</html>
